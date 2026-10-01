@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 h-screen flex items-center justify-center font-sans relative overflow-hidden">
+
+    <div class="bg-white p-8 border-4 border-black w-[500px] shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] ml-12 mb-12">
+        
+        <h1 class="text-2xl font-black mb-2 uppercase tracking-tighter">Selamat Datang!!!</h1>
+        <p class="text-sm text-gray-700 mb-6 font-bold">Harap baca instruksi dengan sangat tidak saksama sebelum melanjutkan.</p>
+
+        <div class="text-red-600 font-bold mb-6 text-xl animate-pulse">
+            Waktu Anda: <span id="timer">00:00:45</span>
+        </div>
+
+        <div class="flex flex-col gap-4 relative">
+
+            <button onclick="alert('Kenapa Anda menekan ini? Anda kan mau lanjut!')" 
+                    class="bg-green-500 hover:bg-green-600 text-white font-black py-4 px-8 rounded-full text-lg uppercase cursor-pointer border-b-4 border-green-800 transition-all active:border-b-0 active:mt-1">
+                JANGAN DILANJUT, BIAR DILAN SAJA
+            </button>
+
+            <p class="text-xs text-gray-500 mt-4 leading-tight">
+                Jika Anda menyetujui syarat dan ketentuan yang tidak pernah Anda baca, silakan abaikan tombol besar di atas dan 
+                <span onclick="alert('Berhasil! Anda menemukan tautan yang benar.')" 
+                      class="text-black font-normal hover:text-gray-800 cursor-crosshair border-b border-black inline-block">
+                    JANGAN DIKLIK DISINI
+                </span> 
+            </p>
+
+            <button onclick="alert('Formulir Dibatalkan. Silakan mulai dari awal.')" 
+                    class="bg-blue-600 text-white font-bold py-2 px-4 rounded w-1/2 mx-auto mt-6">
+                SELANJUTNYA
+            </button>
+
+        </div>
+    </div>
+    <script>
+        let timeLeft = 45;
+        const timerElement = document.getElementById('timer');
+        
+        setInterval(() => {
+            if(timeLeft > 0) {
+                timeLeft--;
+                let seconds = timeLeft < 10 ? '0' + timeLeft : timeLeft;
+                timerElement.innerText = `00:00:${seconds}`;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
